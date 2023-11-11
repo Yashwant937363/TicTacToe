@@ -11,6 +11,8 @@
 }
 
 .navbar {
+  display: flex;
+  list-style-type: none;
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
@@ -53,11 +55,15 @@
   align-items: center;
 }
 
-#list li .link{
+#list li .link {
   color: var(--first);
   padding: 30px 15px;
   margin: 5px;
   text-decoration: none;
+}
+
+#list li .link.active {
+  color: skyblue;
 }
 
 @media (max-width: 500px) {
@@ -65,22 +71,48 @@
     display: none;
     position: fixed;
     width: 100%;
-    top: 45px;
+    height: 100%;
+    top: 30px;
     left: 0px;
     animation: scrolllist 0.5s ease 0s 1 alternate;
     z-index: 2;
+    backdrop-filter: blur(3px);
   }
-  #list li .link{
+  
+  #list li .link {
     display: block;
     text-align: center;
     background-color: rgb(255, 246, 230, 0.7);
-    color: #001a17;
+    color: black;
     padding: 30px 15px;
-    margin: 5px;
+    margin: 15px;
+    border-radius: 23px;
   }
+  
+  #list li .link:active{
+    transform: scale(0.95);
+  }
+  
+  #list li .active span{
+    color: blue;
+    position: relative;
+    top: 0px;
+    padding-bottom: 2px;
+  }
+
+  #list li .active span::after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    bottom:-2px;
+    left:-1px;
+    border: 1px solid blue;
+  }
+
+  
   #menu {
     display: inline-block;
-    position:relative;
+    position: relative;
   }
 }
 
@@ -88,13 +120,16 @@
   from {
     top: -160px;
   }
+
   to {
     top: 45px;
   }
 }
-.active{
+
+.active {
   text-decoration: underline;
 }
+
 #togglemenu,
 #togglesearch {
   display: none;
@@ -102,7 +137,7 @@
 
 .toggle-container {
   display: inline-flex;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   align-items: center;
   width: 120px;
 }
@@ -132,7 +167,7 @@
 
 .slider.round {
   border-radius: 34px;
-  background-color : var(--third);
+  background-color: var(--third);
 }
 
 .slider.round:before {
@@ -145,18 +180,20 @@
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 50%;
-  background-color : var(--first);
+  background-color: var(--first);
 }
 
-input:checked + .slider.round {
-  background-color : #4D9990;
+input:checked+.slider.round {
+  background-color: #4D9990;
 }
 
-input:checked + .slider.round:before {
+input:checked+.slider.round:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
-.bi-people-fill ,.navbar .bi-robot {
-  color : var(--first);
+
+.bi-people-fill,
+.navbar .bi-robot {
+  color: var(--first);
 }

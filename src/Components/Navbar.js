@@ -14,15 +14,15 @@ function Navbar(props) {
   const handleMenuToggle = () => {
     setIsMenuOpen(prevState => !prevState);
   };
+
+  const handleNavlinkClick = () => {
+    setIsMenuOpen(false);
+  }
   return (
     <>
       <header>
         <style>
           {`
-          .navbar {
-            display: flex;
-            list-style-type: none;
-          }
           #list{
             display:${isMenuOpen ? 'block' : 'none'};
           }
@@ -35,9 +35,12 @@ function Navbar(props) {
         </style>
         <nav className="navbar">
           <h1 className="title">{props.title}</h1>
-          <ul id="list">
+          <ul id="list" onClick={handleNavlinkClick}>
             <li>
-              <NavLink className="link" to="/">Home</NavLink>
+              <NavLink onClick={handleNavlinkClick} className="link" to="/"><span>Home</span></NavLink>
+            </li>
+            <li>
+              <NavLink onClick={handleNavlinkClick} className="link" to="/about"><span>About</span></NavLink>
             </li>
           </ul>
           <div className="icons">

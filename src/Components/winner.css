@@ -1,0 +1,57 @@
+/* Row 1 */
+.row-1 {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 3;
+}
+
+/* Row 2 */
+.row-2 {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 3;
+    position: relative;
+    bottom: 3px;
+}
+
+/* Row 3 */
+.row-3 {
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 3;
+    position: relative;
+    bottom: 7px;
+}
+
+/* Column 1 */
+.column-1 {
+    grid-row: 1 / span 3;
+    grid-column: 1 / span 1;
+    position: relative;
+    left: 3px;
+}
+
+/* Column 2 */
+.column-2 {
+    grid-row: 1 / span 3;
+    grid-column: 2 / span 1;
+}
+
+/* Column 3 */
+.column-3 {
+    grid-row: 1 / span 3;
+    grid-column: 3 / span 1;
+    position: relative;
+    right: 3px;
+}
+
+/* Diagonal 1 (top-left to bottom-right) */
+.diagonal-1 {
+    grid-row: 1 / span 3;
+    grid-column: 1 / span 3;
+    transform: rotate(45deg) scale(1.1);
+}
+
+/* Diagonal 2 (top-right to bottom-left) */
+.diagonal-2 {
+    grid-row: 1 / span 3;
+    grid-column: 1 / span 3;
+    transform: rotate(135deg) scale(1.2);
+}

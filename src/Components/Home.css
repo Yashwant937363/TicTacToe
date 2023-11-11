@@ -1,0 +1,163 @@
+.HomePage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100vh - 45px);
+}
+
+.HomePage .btn-home {
+    width: min(340px, 90%);
+    font-size: 1.4rem;
+    padding: 20px;
+    margin: 23px;
+    border-radius: 23px;
+    background-color: antiquewhite;
+    border: none;
+    text-align: center;
+    transition: transform 0.4s ease-in-out;
+}
+
+.HomePage .btn-home:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.6);
+}
+
+.nameing {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    justify-content: space-around;
+    align-content: center;
+    padding: 30px 0px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 23px;
+    background-color: rgb(209, 172, 120);
+    box-shadow: 17px 20px 20px 0px rgba(0, 0, 0, 0.5);
+    width: max(230px, 25%);
+    max-width: 300px;
+    aspect-ratio: 3/4;
+    margin: 25px auto;
+    
+}
+
+.flip-card{
+  perspective: 1000px;
+  width: max(230px, 25%);
+    max-width: 300px;
+    aspect-ratio: 3/4;
+    margin: 25px auto;
+}
+
+.card .bi-x {
+    font-size: max(80px, 10vw);
+}
+
+.flip-card .bi-circle {
+    font-size: max(55px, 8vw);
+    margin-bottom: 8px;
+    padding-top: 15px;
+}
+
+.card input ,.flip-card input , .label{
+    height: 15%;
+    width: 90%;
+    text-align: center;
+    border-radius: 15px;
+    border: none;
+    background-color: antiquewhite;
+    transition: transform 0.4s ease-out, box-shadow 0.3s ease-in-out;
+    font-size: 1rem;
+}
+
+.label{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.card input:hover ,.flip-card input:hover, .label:hover{
+    transform: scale(1.02);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.card input:focus ,.flip-card input:focus{
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    border: none;
+    outline: none;
+    transform: scale(1.05);
+}
+
+.card input::placeholder ,.flip-card input::placeholder{
+    font-size: 1rem;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-front, .flip-card-back {
+display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 23px;
+    background-color: rgb(209, 172, 120);
+    box-shadow: 17px 20px 20px 0px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+
+
+
+
+
+.btnsection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.btn-all {
+    font-size: 1.3rem;
+    margin: 15px 0px;
+    padding: 10px;
+    text-decoration: none;
+    color: whitesmoke;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out ;
+}
+
+.btn-all:hover{
+    transform: scale(1.1);
+}
+
+.btn-save {
+    background-color: #65B307;
+}
+
+.btn-back {
+    background-color: red;
+}

@@ -1,0 +1,162 @@
+:root {
+  --first: #FFA500;
+  --second: #FFECCC;
+  --third: #00332d;
+}
+
+.title {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+}
+
+.navbar {
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  height: 45px;
+}
+
+.icons {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  right: 5px;
+}
+
+.icon {
+  margin: 0 7px;
+  padding: 0px;
+  cursor: pointer;
+}
+
+#menu {
+  display: none;
+  font-size: 30px;
+  color: var(--first);
+}
+
+.icons .bi-x {
+  font-size: 30px;
+  transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+#list {
+  display: inline-flex;
+  list-style-type: none;
+  height: 30px;
+  margin-top: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+#list li .link{
+  color: var(--first);
+  padding: 30px 15px;
+  margin: 5px;
+  text-decoration: none;
+}
+
+@media (max-width: 500px) {
+  #list {
+    display: none;
+    position: fixed;
+    width: 100%;
+    top: 45px;
+    left: 0px;
+    animation: scrolllist 0.5s ease 0s 1 alternate;
+    z-index: 2;
+  }
+  #list li .link{
+    display: block;
+    text-align: center;
+    background-color: rgb(255, 246, 230, 0.7);
+    color: #001a17;
+    padding: 30px 15px;
+    margin: 5px;
+  }
+  #menu {
+    display: inline-block;
+    position:relative;
+  }
+}
+
+@keyframes scrolllist {
+  from {
+    top: -160px;
+  }
+  to {
+    top: 45px;
+  }
+}
+.active{
+  text-decoration: underline;
+}
+#togglemenu,
+#togglesearch {
+  display: none;
+}
+
+.toggle-container {
+  display: inline-flex;
+  justify-content:space-evenly;
+  align-items: center;
+  width: 120px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+.slider.round {
+  border-radius: 34px;
+  background-color : var(--third);
+}
+
+.slider.round:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+  background-color : var(--first);
+}
+
+input:checked + .slider.round {
+  background-color : #4D9990;
+}
+
+input:checked + .slider.round:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+.bi-people-fill ,.navbar .bi-robot {
+  color : var(--first);
+}

@@ -1,13 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  gamestate: ["", "", "", "", "", "", "", "", ""],
-  isWin: false,
-  isSaved: false,
-  lineClass: "class",
-  winner: "Game Draw",
-};
-
 export const calculateWinner = (symbols) => {
   symbols = new Array(...symbols);
   const winCombos = [
@@ -44,7 +36,14 @@ export const calculateWinner = (symbols) => {
 
 export const changeGame = createSlice({
   name: "game",
-  initialState,
+  initialState: {
+    gamestate: ["", "", "", "", "", "", "", "", ""],
+    isWin: false,
+    isSaved: false,
+    lineClass: "",
+    winner: "",
+    counter: 8,
+  },
   reducers: {
     changeGameState: (state, action) => {
       state.gamestate = action.payload; // Use action.payload to update the gamestate
@@ -53,14 +52,18 @@ export const changeGame = createSlice({
       state.winner = winner;
       state.lineClass = lineClass;
     },
+    decrementCounter: (state) => {
+      state.counter -= 1;
+    },
     clear: (state) => {
       state.gamestate = ["", "", "", "", "", "", "", "", ""];
       state.isWin = false;
-      state.lineClass = "class";
-      state.winner = "Game Draw";
+      state.lineClass = "";
+      state.winner = "";
+      state.counter = 8;
     },
   },
 });
 
-export const { changeGameState, clear } = changeGame.actions;
+export const { changeGameState, clear, decrementCounter } = changeGame.actions;
 export default changeGame.reducer;

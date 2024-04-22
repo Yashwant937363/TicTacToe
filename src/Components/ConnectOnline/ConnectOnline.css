@@ -1,0 +1,173 @@
+.connectonline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 150px;
+}
+
+.connectonline .btn {
+  font-size: 1.3rem;
+  padding: 0.9rem;
+  margin: 1.5rem 0px;
+  border-radius: 23px;
+  border: 0px;
+  width: 80%;
+  transition: all linear 0.3s;
+  background-color: var(--btn-color);
+  box-sizing: border-box;
+}
+
+.connectonline .btn:hover {
+  transform: scale(1.01);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.6);
+}
+
+.connectonline > * {
+  width: min(90vw, 400px);
+  box-sizing: border-box;
+}
+
+.connection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.createroom {
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 23px;
+  padding: 20px;
+}
+
+.createroom div:first-child {
+  color: wheat;
+  margin: 1rem;
+}
+
+.createroom .btn-back {
+  color: white;
+  background-color: red;
+}
+
+.joinroom {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: wheat;
+  padding: 20px;
+  border-radius: 23px;
+}
+
+.joinroom > * {
+  margin: 24px 12px;
+  box-sizing: border-box;
+}
+
+.joinroom .inputsection {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  font-size: 1.5rem;
+}
+
+.joinroom .inputsection > * {
+  margin: 16px 8px;
+  box-sizing: border-box;
+}
+
+.joinroom #roomid {
+  opacity: 0;
+  height: 0px !important;
+  width: 0px !important;
+  padding: 0px;
+  margin: 0px !important;
+}
+
+.joinroom .input {
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 1rem;
+  padding-left: 1rem;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: black;
+}
+
+.joinroom .namefield {
+  letter-spacing: 0rem;
+  outline: none;
+  border: none;
+  padding-left: 0px;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.joinroom .cursorblink {
+  animation: blink 1s infinite;
+}
+
+.joinroom .buttonsection {
+  display: grid;
+  margin: 8px;
+}
+
+.joinroom .buttonsection .btn {
+  width: 100%;
+}
+
+@media screen and (max-width: 410px) {
+  .joinroom .inputsection {
+    grid-template-columns: 100%;
+    text-align: center;
+  }
+  .joinroom .inputsection > * {
+    margin: 8px 4px;
+  }
+}
+
+.startsection {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 23px;
+  width: min(90vw, 400px);
+  font-size: 1.5rem;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.startsection .input {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 23px;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 10px;
+  outline: none;
+  border: none;
+}
+
+.startsection > * {
+  margin: 10px;
+}
+
+.startsection .btn-start {
+  width: 70%;
+  border-radius: 23px;
+}

@@ -1,10 +1,24 @@
-* {
-    margin: 0px;
-    padding: 0px;
+:root {
+  --btn-color: antiquewhite;
 }
-html{
-    height: 100vh;
-    background: url('https://images.pexels.com/photos/326333/pexels-photo-326333.jpeg?auto=compress&cs=tinysrgb&w=600') center center no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+* {
+  margin: 0px;
+  padding: 0px;
+}
+html {
+  height: 100vh;
+  background: url("https://images.pexels.com/photos/326333/pexels-photo-326333.jpeg?auto=compress&cs=tinysrgb&w=600")
+    center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.btn-save,
+.btn-connect {
+  background-color: #65b307 !important;
+}
+
+.btn-back {
+  color: white !important;
+  background-color: red !important;
 }

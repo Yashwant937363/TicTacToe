@@ -5,21 +5,32 @@ import { useDispatch, useSelector } from "react-redux";
 import { change } from "../../store/slice/name";
 import { changeScreen } from "../../store/slice/togglecnp";
 import CNPSwitch from "../cnpswitch/cnpswitch";
+import { setOnline } from "../../store/slice/onlinestate";
 
 export default function Home() {
+  const dispatch = useDispatch();
   const [isHome, setHome] = useState(true);
+  const handleOfflineStart = () => {
+    setHome(!isHome);
+    dispatch(setOnline(false));
+  };
+  const handleOnlineStart = () => {
+    dispatch(setOnline(true));
+  };
   return (
     <>
       {isHome ? (
         <div className="HomePage">
-          <button
-            className="btn-home"
-            onClick={() => {
-              setHome(!isHome);
-            }}
-          >
+          <button className="btn-home" onClick={handleOfflineStart}>
             Start
           </button>
+          <Link
+            className="btn-home friends-btn"
+            to="/connectonline"
+            onClick={handleOnlineStart}
+          >
+            Play With Online Friends
+          </Link>
         </div>
       ) : (
         <ChangeName setHome={setHome} />
@@ -96,7 +107,11 @@ function ChangeName({ setHome }) {
         >
           Go Back
         </button>
-        <Link to="/board" className="btn-all btn-save" onClick={handleSave}>
+        <Link
+          to="/board/offlineboard"
+          className="btn-all btn-save"
+          onClick={handleSave}
+        >
           Save
         </Link>
       </div>

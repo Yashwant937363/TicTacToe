@@ -43,6 +43,7 @@ export default function JoinRoom(props) {
   useEffect(() => {
     inputRef.current.focus();
     dispatch(setNamePlayer2(""));
+    // eslint-disable-next-line
   }, []);
   useEffect(() => {
     function handleClickOutside(event) {

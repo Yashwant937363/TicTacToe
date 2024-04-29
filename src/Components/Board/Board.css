@@ -71,7 +71,7 @@
 
 .background {
   position: fixed;
-  top: 0px;
+  top: 45px;
   left: 0px;
   height: calc(100vh - 45px);
   width: 100vw;

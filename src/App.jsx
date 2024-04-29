@@ -27,8 +27,9 @@ function App() {
       setTimeout(() => {
         dispatch(setErrorMsg(""));
       }, 5000);
-    }
-  });
+    } // eslint-disable-next-line
+  }, [successmsg, errormsg]);
+
   return (
     <>
       {successmsg !== "" && <SuccessBar msg={successmsg} />}

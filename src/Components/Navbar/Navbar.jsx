@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./Navbar.css";
 import CNPSwitch from "../cnpswitch/cnpswitch";
@@ -8,6 +8,7 @@ import CNPSwitch from "../cnpswitch/cnpswitch";
 function Navbar(props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isChange = useSelector((state) => state.toggle.isChangeName);
+  const navigate = useNavigate();
 
   const handleMenuToggle = () => {
     setIsMenuOpen((prevState) => !prevState);
@@ -32,7 +33,9 @@ function Navbar(props) {
         `}
         </style>
         <nav className="navbar">
-          <h1 className="title">{props.title}</h1>
+          <h1 className="title" onClick={() => navigate("/")}>
+            {props.title}
+          </h1>
           <ul id="list" onClick={handleNavlinkClick}>
             <li>
               <NavLink onClick={handleNavlinkClick} className="link" to="/">

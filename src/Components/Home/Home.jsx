@@ -6,6 +6,7 @@ import { change } from "../../store/slice/name";
 import { changeScreen } from "../../store/slice/togglecnp";
 import CNPSwitch from "../cnpswitch/cnpswitch";
 import { setOnline } from "../../store/slice/onlinestate";
+import socket from "../../socket/socket";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -17,6 +18,11 @@ export default function Home() {
   const handleOnlineStart = () => {
     dispatch(setOnline(true));
   };
+  useEffect(() => {
+    if (socket.connected) {
+      socket.disconnect();
+    }
+  }, []);
   return (
     <>
       {isHome ? (

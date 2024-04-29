@@ -6,3 +6,16 @@
   color: white;
   background-color: rgba(0, 0, 0, 0.3);
 }
+
+.boardnavbarpopup {
+  height: 100vh !important;
+  height: 100dvh !important;
+  top: 0px !important;
+  z-index: 4 !important;
+}
+
+.waiting {
+  font-size: 2rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+}

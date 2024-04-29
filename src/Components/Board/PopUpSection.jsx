@@ -4,7 +4,6 @@ import PopUpWindow from "../PopUpWindow/PopUpWindow";
 
 export default function PopUpSection(props) {
   const counter = useSelector((state) => state.gameState.counter);
-  console.log(counter);
   const [showPopUp, setShowPopUp] = useState(false);
   const player1 = useSelector((state) => state.name.player1);
   const player2 = useSelector((state) => state.name.player2);

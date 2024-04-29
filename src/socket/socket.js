@@ -46,6 +46,29 @@ export function updateGameState(roomid, index) {
 
 export function restartGame(roomid) {
   return new Promise((resolve, reject) => {
-    socket.emit("game:restart", (response) => resolve(response), roomid);
+    socket.emit("game:restart", roomid);
+  });
+}
+
+export function restartGameConfirmation(roomid, answer) {
+  return new Promise((resolve) => {
+    socket.emit("game:restartconfirmation", roomid, answer);
+  });
+}
+export function resultRestartGame(roomid) {
+  return new Promise((resolve, reject) => {
+    socket.emit("game:resultrestart", roomid);
+  });
+}
+
+export function resultRestartGameConfirmation(roomid, answer) {
+  return new Promise((resolve) => {
+    socket.emit("game:resultrestartconfirmation", roomid, answer);
+  });
+}
+
+export function exitGame(roomid) {
+  return new Promise((resolve, reject) => {
+    socket.emit("game:exit", roomid);
   });
 }

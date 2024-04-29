@@ -61,6 +61,9 @@ export default function OnlineBoard() {
     });
     socket.on("connect:disconnected", () => {
       dispatch(setErrorMsg("Opponent Disconnected"));
+      dispatch(clearOnlineState());
+      dispatch(clear());
+      dispatch(changedefault());
       navigate("/");
     });
     return () => {
